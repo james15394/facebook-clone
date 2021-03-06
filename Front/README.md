@@ -1,5 +1,3 @@
-# Facebook clone
-
 ## ClientSide
 
 ### Create-react-app
@@ -10,8 +8,4 @@
 
 ### CSS framework: Material UI
 
-## ServerSide
 
-### Node js
-
-### Firebase authentication
