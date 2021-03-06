@@ -51,7 +51,6 @@ const ContentCreator = () => {
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
-    console.log("create image");
     handleOpen();
 
     const reader = new FileReader();
@@ -62,8 +61,7 @@ const ContentCreator = () => {
         reader.onloadend = () => {
           setFiles({
             file: file,
-            //@ts-expect-error
-            imagePreviewUrl: reader.result,
+            imagePreviewUrl: reader.result as string,
           });
         };
         reader.onerror = function () {

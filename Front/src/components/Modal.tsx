@@ -201,7 +201,7 @@ interface FadeProps {
 }
 export interface Image {
   file: File | null;
-  imagePreviewUrl: string | undefined;
+  imagePreviewUrl: string;
 }
 interface ModalProps {
   create: boolean;
@@ -273,8 +273,8 @@ const ModalContent = ({
 
   const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
-
     const reader = new FileReader();
+    console.log(reader);
     if (e.target.files) {
       const file = e.target.files[0];
       reader.onloadend = () => {
