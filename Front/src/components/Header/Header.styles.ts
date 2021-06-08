@@ -6,8 +6,8 @@ export const useStyles = makeStyles((theme) =>
     header: {
       background: "#242526",
       position: "sticky",
-      borderBottom: "1px solid rgba(255,255,255,0.09)",
       top: 0,
+      borderBottom: "1px solid rgba(255,255,255,0.09)",
     },
     header__left: {
       display: "flex",
@@ -38,14 +38,12 @@ export const useStyles = makeStyles((theme) =>
           display: (openSearch) => !openSearch && "none",
         },
         "& .search": {
-          // display: "grid",
-          placeItems: "center",
           position: "relative",
           width: 40,
           height: 40,
           borderRadius: "50%",
           cursor: "pointer",
-
+          placeItems: "center",
           display: (openSearch) => (openSearch ? "none" : "grid"),
           "& .MuiSvgIcon-root": {
             color: "#94969B",

@@ -1,5 +1,5 @@
 import { Avatar, Box, Button, Divider, IconButton } from "@material-ui/core";
-import React from "react";
+import React, { useRef } from "react";
 import VideoCallIcon from "@material-ui/icons/VideoCall";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
@@ -27,7 +27,7 @@ interface FormData {
 
 const ContentCreator = () => {
   const { email } = useSelector((state: RootState) => state.user);
-
+  const fileRef = useRef<HTMLInputElement>(null);
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [content, setContent] = React.useState("");
@@ -99,6 +99,7 @@ const ContentCreator = () => {
           type="file"
           name="file"
           id="file"
+          ref={fileRef}
           onChange={handleImageChange}
           style={{ display: "none" }}
         />
@@ -106,7 +107,8 @@ const ContentCreator = () => {
           startIcon={<PhotoLibraryIcon />}
           onClick={() =>
             //@ts-expect-error
-            document.getElementById("file").click()
+            // document.getElementById("file").click()
+            fileRef.current.click()
           }
         >
           Photo/ Video
